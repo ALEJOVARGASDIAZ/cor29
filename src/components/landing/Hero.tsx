@@ -41,7 +41,6 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-            Somos la casa del emprendedor digital y creador de contenido. 
             Con más de 14 años de experiencia, simplificamos tu gestión empresarial 
             con un equipo 100% exclusivo para tu negocio.
           </p>

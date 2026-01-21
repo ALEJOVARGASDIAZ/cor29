@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const ValueProposition = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding section-darker">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
@@ -12,7 +12,7 @@ const ValueProposition = () => {
               Nuestra promesa
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              COR 2.9 es una{" "}
+              COR29 es una{" "}
               <span className="gradient-text">aceleradora integral</span>{" "}
               para empresarios y emprendedores
             </h2>
@@ -24,7 +24,7 @@ const ValueProposition = () => {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
                   <Rocket className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -38,7 +38,7 @@ const ValueProposition = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
                   <Target className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -52,7 +52,7 @@ const ValueProposition = () => {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
                   <Heart className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -76,7 +76,7 @@ const ValueProposition = () => {
 
           {/* Visual */}
           <div className="relative">
-            <div className="relative bg-gradient-to-br from-primary/10 via-secondary/10 to-accent rounded-3xl p-8 md:p-12">
+            <div className="relative rounded-3xl p-8 md:p-12 border border-border bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
               {/* Stats cards */}
               <div className="grid grid-cols-2 gap-4 md:gap-6">
                 <div className="card-elevated text-center p-6">
@@ -114,8 +114,8 @@ const ValueProposition = () => {
               </div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/10 rounded-full blur-2xl" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/20 rounded-full blur-2xl" />
             </div>
           </div>
         </div>

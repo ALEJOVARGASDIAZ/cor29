@@ -40,7 +40,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section-padding bg-accent/30">
+    <section className="section-padding section-dark">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">

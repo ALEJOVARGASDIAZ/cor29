@@ -42,19 +42,19 @@ const Benefits = () => {
   ];
 
   return (
-    <section id="beneficios" className="section-padding bg-accent/30">
+    <section id="beneficios" className="section-padding section-dark">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-            ¿Por qué COR 2.9?
+            ¿Por qué COR29?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             La contabilidad que tu negocio{" "}
             <span className="gradient-text">merece</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            En COR 2.9 creemos en una contabilidad cercana, eficiente y totalmente 
+            En COR29 creemos en una contabilidad cercana, eficiente y totalmente 
             digital. Somos un equipo integral, profesional y comprometido con tu 
             negocio para que crezca con tranquilidad.
           </p>
@@ -68,7 +68,7 @@ const Benefits = () => {
               className="card-elevated group hover:translate-y-[-4px] transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mb-5 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all">
                 <benefit.icon className="h-7 w-7 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">

@@ -15,17 +15,17 @@ const FAQ = () => {
     {
       question: "¿Cuánto tiempo toma activar mi plan?",
       answer:
-        "Una vez confirmes tu plan, en menos de 48 horas tendrás todo listo para empezar. Te asignamos un equipo dedicado y comenzamos a trabajar de inmediato.",
+        "Una vez confirmes tu plan, en menos de 2 horas tendrás todo listo para empezar. Te asignamos un equipo dedicado y comenzamos a trabajar de inmediato.",
     },
     {
       question: "¿Qué pasa si tengo dudas o necesito ayuda urgente?",
       answer:
-        "Tienes acceso directo a tu asesor por WhatsApp. Respondemos en menos de 24 horas hábiles, y para urgencias tenemos línea prioritaria.",
+        "Tienes acceso directo a tu asesor por WhatsApp. Respondemos en menos de 3 horas hábiles, y para urgencias tenemos línea prioritaria.",
     },
     {
       question: "¿Puedo cambiar de plan si mi negocio crece?",
       answer:
-        "¡Por supuesto! Nuestros planes están diseñados para crecer contigo. Puedes escalar en cualquier momento sin perder tu historial ni empezar de cero.",
+        "¡Por supuesto! Nuestros planes cambian con base en las ventas del mes anterior, lo que significa que puede subir o bajar, todo siempre en pro de tu empresa.",
     },
     {
       question: "¿Trabajan con empresas de cualquier sector?",

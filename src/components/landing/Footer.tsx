@@ -33,12 +33,12 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li>
                 <a 
-                  href="https://wa.me/573001234567" 
+                  href="https://wa.me/573174379260?text=Estoy%20interesado%20en%20los%20planes%20de%20COR29" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-primary transition-colors"
                 >
-                  WhatsApp: +57 300 123 4567
+                  WhatsApp: +57 317 437 9260
                 </a>
               </li>
               <li>

@@ -5,13 +5,13 @@ const Testimonials = () => {
     {
       name: "Martín López",
       role: "Creador de contenido de tecnología",
-      quote: "Mi primer consejo a cualquier empresario o creador de contenido es ponerse en contacto con COR29. Con ellos delego el 100% de toda la parte de contadores, contratos, nómina. Incluso con ellos hago todo el registro de marca, empresa, sin ellos hoy no tendría 3 empresas funcionando al 100%. Son indispensables para todo.",
-      rating: 4,
+      quote: "Mi primer consejo para cualquier empresario o creador de contenido es ponerse en contacto con COR29. Con ellos delego el 100% de la contabilidad, contratos y nómina. Además, me acompañaron en el registro de mis marcas y empresas. Gracias a COR29 hoy tengo 3 empresas funcionando al 100%. Son un aliado indispensable para crecer con orden y tranquilidad.",
+      rating: 5,
     },
     {
-      name: "Nicolas Cuervo",
+      name: "Nicolás Cuervo",
       role: "MI CIELA COMPANY SAS",
-      quote: "Ahora que con Angelino montamos la empresa de Mi Ciela, el acompañamiento de Cor29 ha sido clave para llevar la contabilidad, poder facturar electrónicamente, y podemos despreocuparnos de esto y enfocarnos en hacer lo que sabemos. Nos ayudan con temas contables, jurídicos, etc... De verdad que estar con ellos nos da MUCHA PAZ y tranquilidad.",
+      quote: "Desde que con Angelina montamos la empresa Mi Ciela, el acompañamiento de COR29 ha sido clave. Nos apoyan en la contabilidad, la facturación electrónica y los temas jurídicos, lo que nos permite despreocuparnos de esa parte y enfocarnos en lo que realmente sabemos hacer. Trabajar con COR29 nos da mucha paz y tranquilidad.",
       rating: 5,
     },
     {

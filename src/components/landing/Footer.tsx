@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo & description */}
           <div className="md:col-span-2">
-            <img src={corLogo} alt="COR29" className="h-10 w-auto mb-4" />
+            <img src={corLogo} alt="COR29" className="h-14 w-auto mb-4" />
             <p className="text-muted-foreground max-w-md leading-relaxed">
               Contabilidad y gestión empresarial 100% online. Simplificamos la 
               gestión de tu negocio con soluciones modernas, cercanas y confiables.

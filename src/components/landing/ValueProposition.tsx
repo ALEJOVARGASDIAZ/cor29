@@ -12,8 +12,8 @@ const ValueProposition = () => {
               Nuestra promesa
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              COR29: <span className="gradient-text">La casa del emprendedor digital</span>{" "}
-              y creador de contenido
+              <span className="gradient-text">Más de 14 años</span>{" "}
+              impulsando emprendedores
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Somos una aceleradora integral especializada en emprendedores. 

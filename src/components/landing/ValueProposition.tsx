@@ -12,14 +12,14 @@ const ValueProposition = () => {
               Nuestra promesa
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              COR29 es una{" "}
-              <span className="gradient-text">aceleradora integral</span>{" "}
-              para empresarios y emprendedores
+              COR29: <span className="gradient-text">La casa del emprendedor digital</span>{" "}
+              y creador de contenido
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Acompañamos tu crecimiento desde lo estratégico y operativo: 
-              Contabilidad, asesoría legal, gestión de nómina, SST y 
-              acompañamiento empresarial. ¡Impulsa tu negocio con propósito!
+              Somos una aceleradora integral especializada en emprendedores. 
+              Acompañamos tu crecimiento con contabilidad, asesoría legal, gestión de nómina 
+              y acompañamiento empresarial. Con más de 14 años de experiencia, 
+              impulsamos tu negocio con propósito.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -89,7 +89,7 @@ const ValueProposition = () => {
                 </div>
                 <div className="card-elevated text-center p-6">
                   <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
-                    10+
+                    14+
                   </div>
                   <p className="text-muted-foreground text-sm">
                     Años de experiencia
@@ -105,10 +105,10 @@ const ValueProposition = () => {
                 </div>
                 <div className="card-elevated text-center p-6">
                   <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
-                    24h
+                    100%
                   </div>
                   <p className="text-muted-foreground text-sm">
-                    Tiempo de respuesta
+                    Grupo exclusivo para tu empresa
                   </p>
                 </div>
               </div>

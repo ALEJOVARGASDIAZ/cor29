@@ -4,8 +4,7 @@ import {
   Scale, 
   ShieldCheck,
   ArrowRight,
-  Check,
-  Star
+  Check
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -17,7 +16,6 @@ const Services = () => {
       period: "/mes",
       description: "Ventas o compras mensuales hasta",
       limit: "$9.000.000",
-      featured: false,
     },
     {
       name: "PYME",
@@ -25,7 +23,6 @@ const Services = () => {
       period: "/mes",
       description: "Ventas o compras mensuales hasta",
       limit: "$19.000.000",
-      featured: false,
     },
     {
       name: "Pro",
@@ -33,7 +30,6 @@ const Services = () => {
       period: "/mes",
       description: "Ventas o compras mensuales hasta",
       limit: "$39.000.000",
-      featured: true,
     },
     {
       name: "Senior",
@@ -41,7 +37,6 @@ const Services = () => {
       period: "/mes",
       description: "Ventas o compras mensuales hasta",
       limit: "$100.000.000",
-      featured: false,
     },
     {
       name: "Enterprise",
@@ -49,7 +44,6 @@ const Services = () => {
       period: " sobre ventas",
       description: "Ventas y compras mensuales superiores a",
       limit: "$100.000.001",
-      featured: false,
     },
   ];
 
@@ -101,17 +95,8 @@ const Services = () => {
           {accountingPlans.map((plan) => (
             <div
               key={plan.name}
-              className={`${plan.featured ? 'card-pricing-featured' : 'card-pricing'} group hover:translate-y-[-4px] transition-all duration-300`}
+              className="card-pricing group hover:translate-y-[-4px] transition-all duration-300"
             >
-              {plan.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
-                    <Star className="h-3 w-3 fill-current" />
-                    RECOMENDADO
-                  </span>
-                </div>
-              )}
-
               <div className="text-center mb-4">
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   Plan {plan.name}
@@ -137,8 +122,8 @@ const Services = () => {
 
               <a href="#contacto" className="block">
                 <Button 
-                  variant={plan.featured ? "default" : "outline"}
-                  className={`w-full ${plan.featured ? 'btn-primary-gradient' : 'border-border hover:border-primary/50 hover:bg-card'}`}
+                  variant="outline"
+                  className="w-full border-border hover:border-primary/50 hover:bg-card"
                   size="sm"
                 >
                   Comenzar

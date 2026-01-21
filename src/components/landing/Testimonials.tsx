@@ -1,35 +1,23 @@
 import { Star, Quote } from "lucide-react";
-import testimonial1 from "@/assets/testimonial-1.jpg";
-import testimonial2 from "@/assets/testimonial-2.jpg";
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Camila R.",
-      role: "Emprendedora",
-      image: testimonial1,
-      quote: "Con COR29, llevar mis cuentas dejó de ser un dolor de cabeza. Son rápidos, claros y siempre están ahí cuando los necesito.",
+      name: "Martín López",
+      role: "Creador de contenido de tecnología",
+      quote: "Mi primer consejo a cualquier empresario o creador de contenido es ponerse en contacto con COR29. Con ellos delego el 100% de toda la parte de contadores, contratos, nómina. Incluso con ellos hago todo el registro de marca, empresa, sin ellos hoy no tendría 3 empresas funcionando al 100%. Son indispensables para todo.",
+      rating: 4,
+    },
+    {
+      name: "Nicolas Cuervo",
+      role: "MI CIELA COMPANY SAS",
+      quote: "Ahora que con Angelino montamos la empresa de Mi Ciela, el acompañamiento de Cor29 ha sido clave para llevar la contabilidad, poder facturar electrónicamente, y podemos despreocuparnos de esto y enfocarnos en hacer lo que sabemos. Nos ayudan con temas contables, jurídicos, etc... De verdad que estar con ellos nos da MUCHA PAZ y tranquilidad.",
       rating: 5,
     },
     {
-      name: "Andrés G.",
-      role: "CEO Startup",
-      image: testimonial2,
-      quote: "Lo que más valoro es su acompañamiento. No solo hacen contabilidad, son parte de mi estrategia de crecimiento.",
-      rating: 5,
-    },
-    {
-      name: "María L.",
-      role: "Dueña de restaurante",
-      image: null,
-      quote: "Antes tenía miedo de los impuestos y la DIAN. Ahora duermo tranquila sabiendo que COR29 se encarga de todo.",
-      rating: 5,
-    },
-    {
-      name: "Carlos M.",
-      role: "Freelancer",
-      image: null,
-      quote: "Como independiente, necesitaba algo simple y digital. COR29 me da exactamente eso, sin complicaciones.",
+      name: "Maria José Zaraté",
+      role: "BAKERY BOUTIQUE",
+      quote: "COR29 me ha ayudado mucho a ordenar y estructurar mi negocio, su servicio siempre es excelente, ya que puedo resolver dudas y entender de un tema que no domino. Ha sido muy útil para mis finanzas y mejorar procesos de venta y de facturación.",
       rating: 5,
     },
   ];
@@ -52,15 +40,15 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
               className="card-elevated relative group hover:translate-y-[-4px] transition-all duration-300"
             >
               {/* Quote icon */}
-              <div className="absolute top-6 right-6 opacity-20">
-                <Quote className="h-12 w-12 text-primary" />
+              <div className="absolute top-6 right-6">
+                <Quote className="h-10 w-10 text-primary fill-primary/20" />
               </div>
 
               {/* Rating */}
@@ -68,38 +56,23 @@ const Testimonials = () => {
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
                   <Star
                     key={i}
-                    className="h-5 w-5 text-yellow-400 fill-yellow-400"
+                    className="h-5 w-5 text-primary fill-primary"
                   />
                 ))}
               </div>
 
               {/* Quote */}
-              <blockquote className="text-lg text-foreground mb-6 leading-relaxed relative z-10">
-                "{testimonial.quote}"
+              <blockquote className="text-sm text-muted-foreground mb-6 leading-relaxed relative z-10">
+                {testimonial.quote}
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                {testimonial.image ? (
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/30"
-                  />
-                ) : (
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">
-                      {testimonial.name[0]}
-                    </span>
-                  </div>
-                )}
-                <div>
-                  <div className="font-semibold text-foreground">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}
-                  </div>
+              <div className="border-t border-border pt-4 mt-auto">
+                <div className="font-semibold text-primary">
+                  {testimonial.name}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {testimonial.role}
                 </div>
               </div>
             </div>

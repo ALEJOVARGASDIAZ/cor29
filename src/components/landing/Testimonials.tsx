@@ -8,7 +8,7 @@ const Testimonials = () => {
       name: "Camila R.",
       role: "Emprendedora",
       image: testimonial1,
-      quote: "Con COR 2.9, llevar mis cuentas dejó de ser un dolor de cabeza. Son rápidos, claros y siempre están ahí cuando los necesito.",
+      quote: "Con COR29, llevar mis cuentas dejó de ser un dolor de cabeza. Son rápidos, claros y siempre están ahí cuando los necesito.",
       rating: 5,
     },
     {
@@ -22,20 +22,20 @@ const Testimonials = () => {
       name: "María L.",
       role: "Dueña de restaurante",
       image: null,
-      quote: "Antes tenía miedo de los impuestos y la DIAN. Ahora duermo tranquila sabiendo que COR 2.9 se encarga de todo.",
+      quote: "Antes tenía miedo de los impuestos y la DIAN. Ahora duermo tranquila sabiendo que COR29 se encarga de todo.",
       rating: 5,
     },
     {
       name: "Carlos M.",
       role: "Freelancer",
       image: null,
-      quote: "Como independiente, necesitaba algo simple y digital. COR 2.9 me da exactamente eso, sin complicaciones.",
+      quote: "Como independiente, necesitaba algo simple y digital. COR29 me da exactamente eso, sin complicaciones.",
       rating: 5,
     },
   ];
 
   return (
-    <section id="testimonios" className="section-padding bg-background">
+    <section id="testimonios" className="section-padding section-darker">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -47,7 +47,7 @@ const Testimonials = () => {
             <span className="gradient-text">nuestros clientes</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Más de 500 empresarios ya confían en COR 2.9 para gestionar sus negocios.
+            Más de 500 empresarios ya confían en COR29 para gestionar sus negocios.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ const Testimonials = () => {
               className="card-elevated relative group hover:translate-y-[-4px] transition-all duration-300"
             >
               {/* Quote icon */}
-              <div className="absolute top-6 right-6 opacity-10">
+              <div className="absolute top-6 right-6 opacity-20">
                 <Quote className="h-12 w-12 text-primary" />
               </div>
 
@@ -84,11 +84,11 @@ const Testimonials = () => {
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-12 h-12 rounded-full object-cover ring-2 ring-primary/30"
                   />
                 ) : (
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">
                       {testimonial.name[0]}
                     </span>
                   </div>
@@ -111,7 +111,7 @@ const Testimonials = () => {
           <p className="text-muted-foreground mb-6">
             Empresas que confían en nosotros
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-40">
             {["Tech Co", "Startup Hub", "Growth Lab", "Digital First", "Scale Up"].map(
               (company) => (
                 <div

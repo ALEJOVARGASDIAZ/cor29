@@ -24,12 +24,12 @@ const Process = () => {
       number: "04",
       icon: ThumbsUp,
       title: "Acompañamiento continuo",
-      description: "Tu equipo COR 2.9 te acompaña en cada paso del camino.",
+      description: "Tu equipo COR29 te acompaña en cada paso del camino.",
     },
   ];
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding section-dark">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -49,7 +49,7 @@ const Process = () => {
         {/* Process Steps */}
         <div className="relative">
           {/* Connection line - desktop */}
-          <div className="hidden lg:block absolute top-24 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
+          <div className="hidden lg:block absolute top-24 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary/20 via-secondary to-accent/20" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
@@ -57,12 +57,12 @@ const Process = () => {
                 {/* Step card */}
                 <div className="card-elevated text-center group hover:translate-y-[-4px] transition-all duration-300">
                   {/* Number badge */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold text-sm flex items-center justify-center z-10">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm flex items-center justify-center z-10">
                     {index + 1}
                   </div>
 
                   {/* Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5 mt-4 group-hover:bg-primary/20 transition-colors">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center mx-auto mb-5 mt-4 group-hover:from-primary/30 group-hover:to-secondary/30 transition-all">
                     <step.icon className="h-8 w-8 text-primary" />
                   </div>
 

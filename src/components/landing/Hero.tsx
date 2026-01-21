@@ -1,6 +1,5 @@
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const highlights = [
@@ -14,35 +13,34 @@ const Hero = () => {
       id="hero"
       className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Background with overlay */}
+      {/* Background with gradient */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-secondary/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-950/50 via-background to-blue-950/30" />
+        {/* Decorative orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-white/90 text-sm font-medium">
+          <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6">
+            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+            <span className="text-foreground/90 text-sm font-medium">
               Más de 500 empresarios confían en nosotros
             </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
             Contabilidad y gestión empresarial{" "}
-            <span className="text-cyan-200">100% online</span>
+            <span className="gradient-text">100% online</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
             Simplificamos la gestión de tu negocio con soluciones modernas, 
             cercanas y confiables. Somos tu aceleradora integral para crecer 
             con tranquilidad.
@@ -53,10 +51,10 @@ const Hero = () => {
             {highlights.map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2"
+                className="flex items-center gap-2 bg-card/50 backdrop-blur-sm border border-border rounded-lg px-4 py-2"
               >
-                <CheckCircle className="h-5 w-5 text-cyan-300" />
-                <span className="text-white font-medium">{item}</span>
+                <CheckCircle className="h-5 w-5 text-accent" />
+                <span className="text-foreground font-medium">{item}</span>
               </div>
             ))}
           </div>
@@ -66,31 +64,31 @@ const Hero = () => {
             <a href="#contacto">
               <Button 
                 size="lg" 
-                className="bg-white text-primary hover:bg-white/90 font-bold text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="btn-primary-gradient font-bold text-lg px-8 py-6 rounded-xl"
               >
                 Agenda tu asesoría gratuita
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
-            <a href="#servicios">
+            <a href="#planes">
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/30 bg-white/10 text-white hover:bg-white/20 font-semibold text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
+                className="border-2 border-border bg-card/50 text-foreground hover:bg-card hover:border-primary/50 font-semibold text-lg px-8 py-6 rounded-xl backdrop-blur-sm"
               >
-                Ver planes y servicios
+                Ver planes y precios
               </Button>
             </a>
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-12 flex items-center gap-8 text-white/70">
+          <div className="mt-12 flex items-center gap-8 text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div
                     key={i}
-                    className="w-8 h-8 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center text-xs font-bold text-white"
+                    className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary border-2 border-background flex items-center justify-center text-xs font-bold text-white"
                   >
                     {String.fromCharCode(64 + i)}
                   </div>
@@ -99,27 +97,15 @@ const Hero = () => {
               <span className="text-sm">+500 clientes activos</span>
             </div>
             <div className="hidden sm:flex items-center gap-2">
-              <span className="text-yellow-300">★★★★★</span>
+              <span className="text-yellow-400">★★★★★</span>
               <span className="text-sm">4.9/5 satisfacción</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
-        <svg
-          viewBox="0 0 1440 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-        >
-          <path
-            d="M0 50L48 45.8C96 41.7 192 33.3 288 29.2C384 25 480 25 576 33.3C672 41.7 768 58.3 864 62.5C960 66.7 1056 58.3 1152 50C1248 41.7 1344 33.3 1392 29.2L1440 25V100H1392C1344 100 1248 100 1152 100C1056 100 960 100 864 100C768 100 672 100 576 100C480 100 384 100 288 100C192 100 96 100 48 100H0V50Z"
-            fill="hsl(var(--background))"
-          />
-        </svg>
-      </div>
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
     </section>
   );
 };

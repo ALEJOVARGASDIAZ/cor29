@@ -46,7 +46,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contacto" className="section-padding bg-background">
+    <section id="contacto" className="section-padding section-darker">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Content */}
@@ -66,7 +66,7 @@ const ContactForm = () => {
             {/* Contact info */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                   <Phone className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -81,7 +81,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                   <Mail className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -96,7 +96,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <div>
@@ -125,6 +125,7 @@ const ContactForm = () => {
                     value={formData.nombre}
                     onChange={handleChange}
                     required
+                    className="bg-muted border-border focus:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -135,6 +136,7 @@ const ContactForm = () => {
                     placeholder="Nombre de tu empresa"
                     value={formData.empresa}
                     onChange={handleChange}
+                    className="bg-muted border-border focus:border-primary"
                   />
                 </div>
               </div>
@@ -150,6 +152,7 @@ const ContactForm = () => {
                     value={formData.whatsapp}
                     onChange={handleChange}
                     required
+                    className="bg-muted border-border focus:border-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -162,6 +165,7 @@ const ContactForm = () => {
                     value={formData.correo}
                     onChange={handleChange}
                     required
+                    className="bg-muted border-border focus:border-primary"
                   />
                 </div>
               </div>
@@ -175,6 +179,7 @@ const ContactForm = () => {
                   rows={4}
                   value={formData.mensaje}
                   onChange={handleChange}
+                  className="bg-muted border-border focus:border-primary"
                 />
               </div>
 

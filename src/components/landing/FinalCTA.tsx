@@ -5,12 +5,14 @@ const FinalCTA = () => {
   return (
     <section className="relative py-20 md:py-28 px-4 md:px-8 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary" />
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-900 via-blue-900 to-cyan-900" />
+      <div className="absolute inset-0 bg-black/30" />
       
       {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl" />
+        <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-accent rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
@@ -23,7 +25,7 @@ const FinalCTA = () => {
 
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
           Conecta con nuestro equipo y descubre cómo podemos ayudarte a{" "}
-          <span className="text-cyan-200">crecer tu negocio</span>
+          <span className="text-cyan-300">crecer tu negocio</span>
         </h2>
 
         <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">

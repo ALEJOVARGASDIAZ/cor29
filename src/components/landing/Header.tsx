@@ -9,18 +9,18 @@ const Header = () => {
   const navLinks = [
     { label: "Inicio", href: "#hero" },
     { label: "Beneficios", href: "#beneficios" },
-    { label: "Servicios", href: "#servicios" },
+    { label: "Planes", href: "#planes" },
     { label: "Testimonios", href: "#testimonios" },
     { label: "Contacto", href: "#contacto" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2">
-            <img src={corLogo} alt="COR 2.9" className="h-10 md:h-12 w-auto" />
+            <img src={corLogo} alt="COR29" className="h-10 md:h-12 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
@@ -61,7 +61,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
+          <div className="md:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a

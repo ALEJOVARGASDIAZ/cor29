@@ -44,7 +44,7 @@ const FinalCTA = () => {
             </Button>
           </a>
           <a
-            href="https://wa.me/573001234567"
+            href="https://wa.me/573174379260?text=Estoy%20interesado%20en%20los%20planes%20de%20COR29"
             target="_blank"
             rel="noopener noreferrer"
           >

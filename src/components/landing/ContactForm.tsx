@@ -72,10 +72,10 @@ const ContactForm = () => {
                 <div>
                   <div className="font-semibold text-foreground">WhatsApp</div>
                   <a
-                    href="https://wa.me/573001234567"
+                    href="https://wa.me/573174379260?text=Estoy%20interesado%20en%20los%20planes%20de%20COR29"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +57 300 123 4567
+                    +57 317 437 9260
                   </a>
                 </div>
               </div>
@@ -148,7 +148,7 @@ const ContactForm = () => {
                     id="whatsapp"
                     name="whatsapp"
                     type="tel"
-                    placeholder="+57 300 123 4567"
+                    placeholder="+57 317 437 9260"
                     value={formData.whatsapp}
                     onChange={handleChange}
                     required

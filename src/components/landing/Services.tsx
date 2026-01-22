@@ -105,6 +105,10 @@ const Services = () => {
             Elige el plan que{" "}
             <span className="gradient-text">impulse tu negocio</span>
           </h2>
+          <p className="text-xl md:text-2xl font-semibold text-foreground mb-4">
+            Los mejores planes del mercado desde tan solo{" "}
+            <span className="gradient-text">$199.900</span> con software contable incluido.
+          </p>
           <p className="text-lg text-muted-foreground">
             Planes de contabilidad adaptados al tamaño y volumen de tu empresa. 
             Incluyen todo lo que necesitas para crecer sin preocupaciones.

@@ -202,7 +202,11 @@ const Services = () => {
                     </span>
                     <span className="text-muted-foreground">/mes por empleado</span>
                   </div>
-                  <a href="#contacto">
+                  <a 
+                    href={`https://wa.me/573174379260?text=${encodeURIComponent('Hola, estoy interesado en el servicio de Gestión de Nómina de COR29')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button className="btn-primary-gradient">
                       Solicitar información
                       <ArrowRight className="ml-2 h-4 w-4" />
@@ -250,7 +254,12 @@ const Services = () => {
                 ))}
               </ul>
 
-              <a href="#contacto" className="block">
+              <a 
+                href={`https://wa.me/573174379260?text=${encodeURIComponent(`Hola, estoy interesado en el servicio de ${service.title} de COR29`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
                 <Button 
                   variant="outline"
                   className="w-full border-border hover:border-primary/50 hover:bg-card"

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import corLogo from "@/assets/cor-logo.png";
+import corLogo from "@/assets/cor-logo-white.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-2">
-            <img src={corLogo} alt="COR29" className="h-16 md:h-20 w-auto" />
+            <img src={corLogo} alt="COR29" className="h-20 md:h-24 w-auto" />
           </a>
 
           {/* Desktop Navigation */}

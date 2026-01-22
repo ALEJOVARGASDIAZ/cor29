@@ -110,8 +110,7 @@ const Services = () => {
             <span className="gradient-text">$199.900</span> con software contable incluido.
           </p>
           <p className="text-lg text-muted-foreground">
-            Planes de contabilidad adaptados al tamaño y volumen de tu empresa. 
-            Incluyen todo lo que necesitas para crecer sin preocupaciones.
+            Planes de contabilidad adaptados a las ventas. Incluyen todo lo que necesitas para crecer sin preocupaciones.
           </p>
         </div>
 

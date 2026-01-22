@@ -16,6 +16,7 @@ import {
   Monitor
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AnimatedCard } from "@/hooks/use-scroll-animation";
 
 const Services = () => {
   const accountingPlans = [
@@ -133,11 +134,9 @@ const Services = () => {
 
         {/* Accounting Plans Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6 mb-20">
-          {accountingPlans.map((plan) => (
-            <div
-              key={plan.name}
-              className="card-pricing group hover:translate-y-[-4px] transition-all duration-300"
-            >
+          {accountingPlans.map((plan, index) => (
+            <AnimatedCard key={plan.name} index={index}>
+              <div className="card-pricing group hover:translate-y-[-4px] transition-all duration-300 h-full">
               <div className="text-center mb-4">
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   Plan {plan.name}
@@ -175,7 +174,8 @@ const Services = () => {
                   Comenzar
                 </Button>
               </a>
-            </div>
+              </div>
+            </AnimatedCard>
           ))}
         </div>
 

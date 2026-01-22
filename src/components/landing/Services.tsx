@@ -4,7 +4,16 @@ import {
   Scale, 
   ShieldCheck,
   ArrowRight,
-  Check
+  Check,
+  FileText,
+  FileBadge,
+  ClipboardCheck,
+  BarChart3,
+  Building2,
+  Headphones,
+  Receipt,
+  RefreshCw,
+  Monitor
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -47,6 +56,18 @@ const Services = () => {
     },
   ];
 
+  const planFeatures = [
+    { icon: FileText, text: "Contabilización de facturas de compra" },
+    { icon: FileBadge, text: "Emisión de Documento soporte Electrónico" },
+    { icon: ClipboardCheck, text: "Auditoría y pre-contabilización de tu ciclo contable" },
+    { icon: BarChart3, text: "Preparación de Estados Financieros completos" },
+    { icon: Building2, text: "Renovaciones en Cámara de Comercio" },
+    { icon: Headphones, text: "Contador público virtual a tu disposición" },
+    { icon: Receipt, text: "Preparación y presentación de impuestos Nacionales y Distritales, incluyendo los mensuales, bimestrales, cuatrimestrales y anuales" },
+    { icon: RefreshCw, text: "Renovaciones, reformas y modificaciones en Cámara de Comercio y entidades tributarias" },
+    { icon: Monitor, text: "Software contable con facturación electrónica" },
+  ];
+
   const services = [
     {
       icon: Scale,
@@ -76,7 +97,7 @@ const Services = () => {
     <section id="planes" className="section-padding section-darker">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
             Planes Contables
           </span>
@@ -88,6 +109,23 @@ const Services = () => {
             Planes de contabilidad adaptados al tamaño y volumen de tu empresa. 
             Incluyen todo lo que necesitas para crecer sin preocupaciones.
           </p>
+        </div>
+
+        {/* Plan Features - What's Included */}
+        <div className="card-elevated mb-12">
+          <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6 text-center">
+            Todos nuestros planes incluyen:
+          </h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {planFeatures.map((feature, index) => (
+              <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-muted/30">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="h-4 w-4 text-primary" />
+                </div>
+                <span className="text-sm text-foreground leading-relaxed">{feature.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Accounting Plans Grid */}

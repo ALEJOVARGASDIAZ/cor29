@@ -179,20 +179,23 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Plan People - Payroll Section */}
+        {/* COR29 People - Payroll Section */}
         <div id="nomina" className="mb-20">
           <div className="text-center mb-8">
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
-              Gestión de Talento Humano
+              Gestión de Nómina y Talento Humano
             </span>
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground">
-              Plan People
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              🧑‍🤝‍🧑 COR29 People
             </h3>
+            <p className="text-muted-foreground max-w-3xl mx-auto">
+              Servicio especializado en la gestión integral de nómina y talento humano, diseñado para que las empresas cumplan correctamente con la normatividad laboral y puedan enfocarse en hacer crecer su negocio con tranquilidad.
+            </p>
           </div>
           
-          <div className="card-pricing-featured max-w-4xl mx-auto p-8 md:p-10">
-            <div className="flex flex-col lg:flex-row items-start gap-8">
-              <div className="flex-1">
+          <div className="card-pricing-featured max-w-5xl mx-auto p-8 md:p-10">
+            <div className="flex flex-col lg:flex-row items-start gap-8 mb-8">
+              <div className="lg:w-1/3">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center flex-shrink-0">
                     <Users className="h-8 w-8 text-primary" />
@@ -204,80 +207,79 @@ const Services = () => {
                     <p className="text-muted-foreground">/mes por empleado</p>
                   </div>
                 </div>
-                
-                <p className="text-muted-foreground mb-6">
-                  Somos tu departamento de nómina. Outsourcing completo de nómina y seguridad social para que te enfoques en hacer crecer tu negocio.
-                </p>
 
                 <a 
-                  href={`https://wa.me/573174379260?text=${encodeURIComponent('Hola, estoy interesado en el Plan People de COR29')}`}
+                  href={`https://wa.me/573174379260?text=${encodeURIComponent('Hola, estoy interesado en COR29 People')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button className="btn-primary-gradient" size="lg">
+                  <Button className="btn-primary-gradient w-full" size="lg">
                     Solicitar información
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </a>
+
+                <div className="mt-6 p-4 rounded-xl bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20">
+                  <h4 className="text-sm font-bold text-accent mb-2">✨ Beneficio Principal</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Delega toda la gestión de nómina y talento humano, reduce riesgos legales y administrativos, y opera con paz, orden y tranquilidad.
+                  </p>
+                </div>
               </div>
               
-              <div className="flex-1 space-y-6">
-                <div>
-                  <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Proceso Inicial</h4>
-                  <ul className="space-y-2 text-sm text-foreground">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Afiliaciones a EPS, ARL y Caja de Compensación</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Habilitación de nómina electrónica DIAN</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Elaboración de contratos laborales</span>
-                    </li>
-                  </ul>
+              <div className="lg:w-2/3 grid sm:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <Receipt className="h-4 w-4" />
+                      Nómina Electrónica
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Cálculo correcto de salarios, horas extras, deducciones, provisiones y emisión de la nómina electrónica cumpliendo con todos los requisitos legales ante la DIAN.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <ShieldCheck className="h-4 w-4" />
+                      Seguridad Social y Parafiscales
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Elaboración de planillas, validación de aportes y acompañamiento en el pago oportuno a EPS, ARL, pensión y cajas de compensación.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <FileText className="h-4 w-4" />
+                      Contratos y Gestión Jurídica
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Elaboración, revisión y seguimiento de contratos laborales, así como apoyo en temas jurídicos laborales recurrentes.
+                    </p>
+                  </div>
                 </div>
                 
-                <div>
-                  <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Proceso Mensual</h4>
-                  <ul className="space-y-2 text-sm text-foreground">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Planilla de seguridad social lista para pago</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Soportes de pago mensuales o quincenales</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Emisión de nómina electrónica y provisiones</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Radicación de incapacidades</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">Servicios Adicionales</h4>
-                  <ul className="space-y-2 text-sm text-foreground">
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Procesos disciplinarios y certificados laborales</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Acompañamiento en contratación</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                      <span>Exámenes médicos ocupacionales</span>
-                    </li>
-                  </ul>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <Headphones className="h-4 w-4" />
+                      Soporte Mensual
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Envío de comprobantes de nómina, soporte a empleados, manejo de incapacidades, licencias, novedades y certificados laborales.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <Users className="h-4 w-4" />
+                      Asesoría en Gestión de Personal
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Acompañamiento en procesos de contratación, desvinculación y buenas prácticas laborales para evitar riesgos legales.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

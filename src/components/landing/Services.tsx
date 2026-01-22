@@ -186,7 +186,7 @@ const Services = () => {
               Gestión de Nómina y Talento Humano
             </span>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              🧑‍🤝‍🧑 COR29 People
+              COR29 People
             </h3>
             <p className="text-muted-foreground max-w-3xl mx-auto">
               Servicio especializado en la gestión integral de nómina y talento humano, diseñado para que las empresas cumplan correctamente con la normatividad laboral y puedan enfocarse en hacer crecer su negocio con tranquilidad.

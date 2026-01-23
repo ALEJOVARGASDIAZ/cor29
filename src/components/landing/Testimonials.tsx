@@ -11,6 +11,16 @@ import revolucionDoradaLogo from "@/assets/logos/revolucion-dorada.jpg";
 import rojosegurosLogo from "@/assets/logos/rojoseguros.jpg";
 import rookieRunnerLogo from "@/assets/logos/rookie-runner.jpg";
 import rysSeguriadLogo from "@/assets/logos/rys-seguridad.jpg";
+import sachavitalLogo from "@/assets/logos/sachavital.jpg";
+import salazarEsLogo from "@/assets/logos/salazar-es.jpg";
+import sebasmayeLogo from "@/assets/logos/sebasmaye.jpg";
+import andreaRoaLogo from "@/assets/logos/andrea-roa.jpg";
+import secConsultoresLogo from "@/assets/logos/sec-consultores.jpg";
+import superbitesLogo from "@/assets/logos/superbites-studios.jpg";
+import octopusLogo from "@/assets/logos/octopus.jpg";
+import tecnikaLogo from "@/assets/logos/tecnika.jpg";
+import tusnackLogo from "@/assets/logos/tusnack.jpg";
+import muComunicacionesLogo from "@/assets/logos/mu-comunicaciones.jpg";
 
 const Testimonials = () => {
   const companyLogos = [
@@ -24,6 +34,16 @@ const Testimonials = () => {
     { src: rojosegurosLogo, alt: "Rojoseguros" },
     { src: rookieRunnerLogo, alt: "Rookie Runner" },
     { src: rysSeguriadLogo, alt: "RYS Seguridad" },
+    { src: sachavitalLogo, alt: "Sachavital" },
+    { src: salazarEsLogo, alt: "Salazar E&S" },
+    { src: sebasmayeLogo, alt: "Sebasmaye" },
+    { src: andreaRoaLogo, alt: "Andrea Roa" },
+    { src: secConsultoresLogo, alt: "SEC Consultores" },
+    { src: superbitesLogo, alt: "SuperBites Studios" },
+    { src: octopusLogo, alt: "Octopus" },
+    { src: tecnikaLogo, alt: "Tecnika Ingeniería" },
+    { src: tusnackLogo, alt: "Tusnack" },
+    { src: muComunicacionesLogo, alt: "MU Comunicaciones" },
   ];
   const testimonials = [
     {

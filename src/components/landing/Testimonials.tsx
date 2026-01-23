@@ -124,7 +124,7 @@ const Testimonials = () => {
         {/* Trust badges - Infinite scrolling company names */}
         <div className="mt-16 text-center">
           <p className="text-muted-foreground mb-8">
-            Empresas que confían en nosotros
+            Más de 500 empresas que confían en nosotros
           </p>
           <div className="relative overflow-hidden">
             {/* Gradient fade left */}

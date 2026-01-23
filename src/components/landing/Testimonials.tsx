@@ -31,6 +31,16 @@ const Testimonials = () => {
     "Arena Lens",
     "ARAG",
     "Aprogresar S.A.S",
+    "Append",
+    "AP Dent",
+    "ILS",
+    "Alianzas Eléctricas",
+    "Alianza Cardinal",
+    "A|H",
+    "Abogado Harol Ríos",
+    "Abohaus",
+    "Zafiro Properties",
+    "911 Racing",
   ];
 
   const testimonials = [

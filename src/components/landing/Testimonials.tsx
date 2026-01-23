@@ -1,50 +1,38 @@
 import { Star, Quote } from "lucide-react";
 
-// Import company logos
-import worldboxLogo from "@/assets/logos/worldbox.jpg";
-import prismaLogo from "@/assets/logos/prisma.jpg";
-import martinLopezLogo from "@/assets/logos/martin-lopez.jpg";
-import quiraLogo from "@/assets/logos/quira.jpg";
-import realsafeLogo from "@/assets/logos/realsafe.jpg";
-import redelecLogo from "@/assets/logos/redelec.jpg";
-import revolucionDoradaLogo from "@/assets/logos/revolucion-dorada.jpg";
-import rojosegurosLogo from "@/assets/logos/rojoseguros.jpg";
-import rookieRunnerLogo from "@/assets/logos/rookie-runner.jpg";
-import rysSeguriadLogo from "@/assets/logos/rys-seguridad.jpg";
-import sachavitalLogo from "@/assets/logos/sachavital.jpg";
-import salazarEsLogo from "@/assets/logos/salazar-es.jpg";
-import sebasmayeLogo from "@/assets/logos/sebasmaye.jpg";
-import andreaRoaLogo from "@/assets/logos/andrea-roa.jpg";
-import secConsultoresLogo from "@/assets/logos/sec-consultores.jpg";
-import superbitesLogo from "@/assets/logos/superbites-studios.jpg";
-import octopusLogo from "@/assets/logos/octopus.jpg";
-import tecnikaLogo from "@/assets/logos/tecnika.jpg";
-import tusnackLogo from "@/assets/logos/tusnack.jpg";
-import muComunicacionesLogo from "@/assets/logos/mu-comunicaciones.jpg";
-
 const Testimonials = () => {
-  const companyLogos = [
-    { src: worldboxLogo, alt: "World Box" },
-    { src: prismaLogo, alt: "Prisma Proyectos Civiles" },
-    { src: martinLopezLogo, alt: "Martín López" },
-    { src: quiraLogo, alt: "Quira" },
-    { src: realsafeLogo, alt: "Realsafe" },
-    { src: redelecLogo, alt: "RedElec Civitas" },
-    { src: revolucionDoradaLogo, alt: "Revolución Dorada Coffee" },
-    { src: rojosegurosLogo, alt: "Rojoseguros" },
-    { src: rookieRunnerLogo, alt: "Rookie Runner" },
-    { src: rysSeguriadLogo, alt: "RYS Seguridad" },
-    { src: sachavitalLogo, alt: "Sachavital" },
-    { src: salazarEsLogo, alt: "Salazar E&S" },
-    { src: sebasmayeLogo, alt: "Sebasmaye" },
-    { src: andreaRoaLogo, alt: "Andrea Roa" },
-    { src: secConsultoresLogo, alt: "SEC Consultores" },
-    { src: superbitesLogo, alt: "SuperBites Studios" },
-    { src: octopusLogo, alt: "Octopus" },
-    { src: tecnikaLogo, alt: "Tecnika Ingeniería" },
-    { src: tusnackLogo, alt: "Tusnack" },
-    { src: muComunicacionesLogo, alt: "MU Comunicaciones" },
+  const companyNames = [
+    "World Box",
+    "Prisma",
+    "Martín López",
+    "Quira",
+    "Realsafe",
+    "RedElec Civitas",
+    "Revolución Dorada",
+    "Rojoseguros",
+    "Rookie Runner",
+    "RYS Seguridad",
+    "Sachavital",
+    "Salazar E&S",
+    "Sebasmaye",
+    "Andrea Roa",
+    "SEC Consultores",
+    "SuperBites Studios",
+    "Tecnika",
+    "Tusnack",
+    "MU Comunicaciones",
+    "Comparte lo Esencial",
+    "Claryi SAS",
+    "CityLab Mobility",
+    "Pparcee!!",
+    "Cabañas La Pradera",
+    "BoostLab",
+    "Black Sheep Media",
+    "Arena Lens",
+    "ARAG",
+    "Aprogresar S.A.S",
   ];
+
   const testimonials = [
     {
       name: "Martín López",
@@ -123,22 +111,18 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Trust badges - Company logos */}
+        {/* Trust badges - Company names */}
         <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-6">
             Empresas que confían en nosotros
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {companyLogos.map((company) => (
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 opacity-50">
+            {companyNames.map((company) => (
               <div
-                key={company.alt}
-                className="h-12 md:h-16 flex items-center justify-center"
+                key={company}
+                className="text-lg md:text-xl font-bold text-muted-foreground hover:opacity-100 transition-opacity duration-300"
               >
-                <img
-                  src={company.src}
-                  alt={company.alt}
-                  className="h-full w-auto max-w-[120px] md:max-w-[150px] object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                />
+                {company}
               </div>
             ))}
           </div>

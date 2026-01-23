@@ -121,20 +121,41 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Trust badges - Company names */}
+        {/* Trust badges - Infinite scrolling company names */}
         <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-6">
+          <p className="text-muted-foreground mb-8">
             Empresas que confían en nosotros
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 opacity-50">
-            {companyNames.map((company) => (
-              <div
-                key={company}
-                className="text-lg md:text-xl font-bold text-muted-foreground hover:opacity-100 transition-opacity duration-300"
-              >
-                {company}
+          <div className="relative overflow-hidden">
+            {/* Gradient fade left */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+            {/* Gradient fade right */}
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+            
+            <div className="flex animate-marquee">
+              {/* First set of names */}
+              <div className="flex shrink-0 items-center gap-8 md:gap-12 pr-8 md:pr-12">
+                {companyNames.map((company) => (
+                  <span
+                    key={company}
+                    className="text-lg md:text-xl font-bold text-muted-foreground/50 whitespace-nowrap"
+                  >
+                    {company}
+                  </span>
+                ))}
               </div>
-            ))}
+              {/* Duplicate set for seamless loop */}
+              <div className="flex shrink-0 items-center gap-8 md:gap-12 pr-8 md:pr-12">
+                {companyNames.map((company) => (
+                  <span
+                    key={`${company}-dup`}
+                    className="text-lg md:text-xl font-bold text-muted-foreground/50 whitespace-nowrap"
+                  >
+                    {company}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

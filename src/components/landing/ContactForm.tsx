@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { saveLead, openWhatsAppWithMessage } from "@/hooks/use-lead-capture";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -25,13 +26,16 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Build WhatsApp message with form data
-    const mensaje = `Hola, soy ${formData.nombre.trim()}.${formData.mensaje.trim() ? `\n\n${formData.mensaje.trim()}` : ''}\n\nMi WhatsApp: ${formData.whatsapp.trim()}`;
-    
-    const whatsappUrl = `https://wa.me/573174379260?text=${encodeURIComponent(mensaje)}`;
-    
-    // Open WhatsApp in new tab
-    window.open(whatsappUrl, '_blank');
+    // Save lead to database
+    await saveLead({
+      nombre: formData.nombre,
+      whatsapp: formData.whatsapp,
+      mensaje: formData.mensaje,
+      origen: "formulario-contacto",
+    });
+
+    // Open WhatsApp
+    openWhatsAppWithMessage(formData.nombre, formData.whatsapp, formData.mensaje);
 
     toast({
       title: "¡Redirigiendo a WhatsApp!",

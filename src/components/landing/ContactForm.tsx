@@ -11,9 +11,7 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     nombre: "",
-    empresa: "",
     whatsapp: "",
-    correo: "",
     mensaje: "",
   });
 
@@ -37,9 +35,7 @@ const ContactForm = () => {
 
     setFormData({
       nombre: "",
-      empresa: "",
       whatsapp: "",
-      correo: "",
       mensaje: "",
     });
     setIsSubmitting(false);
@@ -115,63 +111,35 @@ const ContactForm = () => {
               Agenda tu asesoría gratuita
             </h3>
             <form onSubmit={handleSubmit} className="space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div className="space-y-2">
-                  <Label htmlFor="nombre">Nombre *</Label>
-                  <Input
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Tu nombre completo"
-                    value={formData.nombre}
-                    onChange={handleChange}
-                    required
-                    className="bg-muted border-border focus:border-primary"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="empresa">Empresa</Label>
-                  <Input
-                    id="empresa"
-                    name="empresa"
-                    placeholder="Nombre de tu empresa"
-                    value={formData.empresa}
-                    onChange={handleChange}
-                    className="bg-muted border-border focus:border-primary"
-                  />
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div className="space-y-2">
-                  <Label htmlFor="whatsapp">WhatsApp *</Label>
-                  <Input
-                    id="whatsapp"
-                    name="whatsapp"
-                    type="tel"
-                    placeholder="+57 317 437 9260"
-                    value={formData.whatsapp}
-                    onChange={handleChange}
-                    required
-                    className="bg-muted border-border focus:border-primary"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="correo">Correo *</Label>
-                  <Input
-                    id="correo"
-                    name="correo"
-                    type="email"
-                    placeholder="tu@email.com"
-                    value={formData.correo}
-                    onChange={handleChange}
-                    required
-                    className="bg-muted border-border focus:border-primary"
-                  />
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="nombre">Nombre *</Label>
+                <Input
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Tu nombre completo"
+                  value={formData.nombre}
+                  onChange={handleChange}
+                  required
+                  className="bg-muted border-border focus:border-primary"
+                />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="mensaje">¿En qué te podemos ayudar?</Label>
+                <Label htmlFor="whatsapp">WhatsApp *</Label>
+                <Input
+                  id="whatsapp"
+                  name="whatsapp"
+                  type="tel"
+                  placeholder="+57 317 437 9260"
+                  value={formData.whatsapp}
+                  onChange={handleChange}
+                  required
+                  className="bg-muted border-border focus:border-primary"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="mensaje">¿En qué te podemos ayudar? (opcional)</Label>
                 <Textarea
                   id="mensaje"
                   name="mensaje"

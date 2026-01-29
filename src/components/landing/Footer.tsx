@@ -59,12 +59,15 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © {currentYear} COR29. Todos los derechos reservados.
           </p>
-          <div className="flex gap-6 text-muted-foreground text-sm">
+          <div className="flex flex-wrap gap-4 md:gap-6 text-muted-foreground text-sm">
             <a href="#" className="hover:text-primary transition-colors">
               Política de privacidad
             </a>
             <a href="#" className="hover:text-primary transition-colors">
               Términos y condiciones
+            </a>
+            <a href="/admin/login" className="hover:text-primary transition-colors opacity-60 hover:opacity-100">
+              Admin
             </a>
           </div>
         </div>

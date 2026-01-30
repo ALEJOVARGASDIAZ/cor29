@@ -56,18 +56,20 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} COR29. Todos los derechos reservados.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-muted-foreground text-sm">
+              © {currentYear} COR29. Todos los derechos reservados.
+            </p>
+            <a href="/admin/login" className="text-primary hover:text-primary/80 transition-colors font-medium text-sm">
+              🔐 Admin
+            </a>
+          </div>
           <div className="flex flex-wrap gap-4 md:gap-6 text-muted-foreground text-sm">
             <a href="#" className="hover:text-primary transition-colors">
               Política de privacidad
             </a>
             <a href="#" className="hover:text-primary transition-colors">
               Términos y condiciones
-            </a>
-            <a href="/admin/login" className="text-primary hover:text-primary/80 transition-colors font-medium">
-              🔐 Admin
             </a>
           </div>
         </div>

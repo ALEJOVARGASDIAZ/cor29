@@ -111,7 +111,13 @@ export default function AdminDashboard() {
   };
 
   const openWhatsApp = (phone: string, nombre: string) => {
-    const cleanPhone = phone.replace(/\D/g, '');
+    let cleanPhone = phone.replace(/\D/g, '');
+    
+    // Si el número no tiene código de país, agregar +57 (Colombia)
+    if (cleanPhone.length === 10 && cleanPhone.startsWith('3')) {
+      cleanPhone = '57' + cleanPhone;
+    }
+    
     const message = encodeURIComponent(`Hola ${nombre}, soy del equipo de COR29. Recibimos tu solicitud y queremos ayudarte.`);
     window.open(`https://wa.me/${cleanPhone}?text=${message}`, '_blank');
   };

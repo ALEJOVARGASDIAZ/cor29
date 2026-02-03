@@ -1,17 +1,22 @@
-import { ArrowRight, CheckCircle, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, MessageCircle, Clock, Shield, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackWhatsAppClick, trackScheduleClick, trackCTAClick } from "@/lib/gtm";
+import { useABTest, HERO_VARIANTS, CTA_VARIANTS } from "@/hooks/use-ab-test";
 
 const Hero = () => {
+  const { heroVariant, ctaVariant } = useABTest();
+  const heroContent = HERO_VARIANTS[heroVariant];
+  const ctaContent = CTA_VARIANTS[ctaVariant];
+
   const highlights = [
     "Contabilidad 100% online",
-    "Asesoría legal incluida",
-    "Gestión de nómina digital",
+    "Software incluido",
+    "Soporte en menos de 3 horas",
   ];
 
   const handleScheduleClick = () => {
     trackScheduleClick("hero");
-    trackCTAClick("Agenda tu asesoría gratuita", "hero");
+    trackCTAClick(ctaContent.primary, "hero");
   };
 
   const handleWhatsAppClick = () => {
@@ -28,41 +33,47 @@ const Hero = () => {
       className="relative flex items-center pt-24 pb-12 overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Background with gradient - reduced for performance */}
+      {/* Background with gradient - optimized for LCP */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-950/50 via-background to-blue-950/30" />
-        {/* Single decorative orb for performance */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
         <div className="max-w-3xl">
-          {/* Badge */}
+          {/* Badge with trust signal */}
           <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6">
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" aria-hidden="true" />
             <span className="text-foreground/90 text-sm font-medium">
-              Más de 500 empresarios confían en nosotros
+              {heroContent.badge}
             </span>
           </div>
 
-          {/* Headline */}
+          {/* Headline - LCP optimized */}
           <h1 
             id="hero-heading"
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
           >
-            Contabilidad y gestión empresarial{" "}
-            <span className="gradient-text">100% online en Colombia</span>
+            {heroContent.headline}{" "}
+            <span className="gradient-text">{heroContent.headlineHighlight}</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-            Con más de 14 años de experiencia, simplificamos tu gestión empresarial 
-            con un equipo 100% exclusivo para tu negocio. Planes desde $199.900/mes.
+          {/* Subheadline with value proposition */}
+          <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed max-w-2xl">
+            {heroContent.subheadline}
           </p>
 
-          {/* Highlights */}
-          <ul className="flex flex-wrap gap-4 mb-10" aria-label="Beneficios principales">
+          {/* Differentiator callout */}
+          <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/30 rounded-lg px-4 py-2 mb-8">
+            <Shield className="h-5 w-5 text-accent" aria-hidden="true" />
+            <span className="text-foreground font-semibold text-sm">
+              {heroContent.differentiator}
+            </span>
+          </div>
+
+          {/* Highlights with icons */}
+          <ul className="flex flex-wrap gap-4 mb-8" aria-label="Beneficios principales">
             {highlights.map((item) => (
               <li
                 key={item}
@@ -74,14 +85,14 @@ const Hero = () => {
             ))}
           </ul>
 
-          {/* CTAs - Mobile optimized */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* CTAs - A/B tested */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <a href="#contacto" onClick={handleScheduleClick}>
               <Button 
                 size="lg" 
                 className="btn-primary-gradient font-bold text-lg px-8 py-6 rounded-xl w-full sm:w-auto min-h-[56px]"
               >
-                Agenda tu asesoría gratuita
+                {ctaContent.primary}
                 <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Button>
             </a>
@@ -92,12 +103,24 @@ const Hero = () => {
               className="border-2 border-border bg-card/50 text-foreground hover:bg-card hover:border-primary/50 font-semibold text-lg px-8 py-6 rounded-xl min-h-[56px]"
             >
               <MessageCircle className="mr-2 h-5 w-5 text-[#25D366]" aria-hidden="true" />
-              WhatsApp
+              {ctaContent.secondary}
             </Button>
           </div>
 
+          {/* Microcopy de confianza */}
+          <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8">
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 text-accent" aria-hidden="true" />
+              <span>Respuesta en menos de 3 horas</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Headphones className="h-4 w-4 text-accent" aria-hidden="true" />
+              <span>Atendemos en toda Colombia</span>
+            </div>
+          </div>
+
           {/* Trust indicators */}
-          <div className="mt-12 flex items-center gap-8 text-muted-foreground">
+          <div className="flex items-center gap-8 text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2" aria-hidden="true">
                 {[1, 2, 3, 4].map((i) => (

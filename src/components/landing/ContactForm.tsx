@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { saveLead, openWhatsAppWithMessage } from "@/hooks/use-lead-capture";
+import { trackPhoneClick, trackCTAClick } from "@/lib/gtm";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -25,6 +26,9 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    // Track CTA click
+    trackCTAClick("Solicita asesoría ahora", "contact_form");
 
     // Save lead to database
     await saveLead({
@@ -50,8 +54,12 @@ const ContactForm = () => {
     setIsSubmitting(false);
   };
 
+  const handlePhoneClick = () => {
+    trackPhoneClick("contact_section");
+  };
+
   return (
-    <section id="contacto" className="section-padding section-darker">
+    <section id="contacto" className="section-padding section-darker" aria-labelledby="contact-heading">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Content */}
@@ -59,7 +67,7 @@ const ContactForm = () => {
             <span className="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-4">
               Contacto
             </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 id="contact-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               ¿Listo para llevar tu empresa al{" "}
               <span className="gradient-text">siguiente nivel?</span>
             </h2>
@@ -69,15 +77,16 @@ const ContactForm = () => {
             </p>
 
             {/* Contact info */}
-            <div className="space-y-4 mb-8">
+            <address className="space-y-4 mb-8 not-italic">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <Phone className="h-5 w-5 text-primary" />
+                  <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">WhatsApp</div>
                   <a
                     href="https://wa.me/573174379260?text=Estoy%20interesado%20en%20los%20planes%20de%20COR29"
+                    onClick={handlePhoneClick}
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     +57 317 437 9260
@@ -87,7 +96,7 @@ const ContactForm = () => {
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <Mail className="h-5 w-5 text-primary" />
+                  <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Email</div>
@@ -102,7 +111,7 @@ const ContactForm = () => {
 
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <MapPin className="h-5 w-5 text-primary" />
+                  <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="font-semibold text-foreground">Ubicación</div>
@@ -111,7 +120,7 @@ const ContactForm = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </address>
           </div>
 
           {/* Form */}
@@ -129,7 +138,8 @@ const ContactForm = () => {
                   value={formData.nombre}
                   onChange={handleChange}
                   required
-                  className="bg-muted border-border focus:border-primary"
+                  autoComplete="name"
+                  className="bg-muted border-border focus:border-primary min-h-[48px]"
                 />
               </div>
 
@@ -143,7 +153,8 @@ const ContactForm = () => {
                   value={formData.whatsapp}
                   onChange={handleChange}
                   required
-                  className="bg-muted border-border focus:border-primary"
+                  autoComplete="tel"
+                  className="bg-muted border-border focus:border-primary min-h-[48px]"
                 />
               </div>
 
@@ -162,7 +173,7 @@ const ContactForm = () => {
 
               <Button
                 type="submit"
-                className="btn-primary-gradient w-full text-lg py-6"
+                className="btn-primary-gradient w-full text-lg py-6 min-h-[56px]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -170,7 +181,7 @@ const ContactForm = () => {
                 ) : (
                   <>
                     Solicita asesoría ahora
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
                   </>
                 )}
               </Button>

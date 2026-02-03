@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatedCard } from "@/hooks/use-scroll-animation";
+import { trackWhatsAppClick, trackServiceInterest, trackCTAClick } from "@/lib/gtm";
 
 const Services = () => {
   const accountingPlans = [
@@ -165,10 +166,14 @@ const Services = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
+                onClick={() => {
+                  trackWhatsAppClick("plan_card", plan.name);
+                  trackServiceInterest(`Plan ${plan.name}`);
+                }}
               >
                 <Button 
                   variant="outline"
-                  className="w-full border-border hover:border-primary/50 hover:bg-card"
+                  className="w-full border-border hover:border-primary/50 hover:bg-card min-h-[44px]"
                   size="sm"
                 >
                   Comenzar

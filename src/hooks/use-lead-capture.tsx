@@ -1,10 +1,12 @@
 import { supabase } from "@/integrations/supabase/client";
+import { trackLeadSubmit, trackWhatsAppClick } from "@/lib/gtm";
 
 interface LeadData {
   nombre: string;
   whatsapp: string;
   mensaje?: string;
   origen?: string;
+  planName?: string;
 }
 
 export const saveLead = async (data: LeadData): Promise<boolean> => {
@@ -20,6 +22,13 @@ export const saveLead = async (data: LeadData): Promise<boolean> => {
       console.error("Error saving lead:", error);
       return false;
     }
+    
+    // Track lead submission
+    trackLeadSubmit({
+      origen: data.origen || "formulario",
+      planName: data.planName,
+    });
+    
     return true;
   } catch (err) {
     console.error("Error saving lead:", err);
@@ -39,6 +48,9 @@ export const openWhatsAppWithMessage = (nombre: string, whatsapp: string, mensaj
   }
   
   text += `\n\nMi WhatsApp: ${whatsapp.trim()}`;
+  
+  // Track WhatsApp click
+  trackWhatsAppClick("lead_form", planName);
   
   const whatsappUrl = `https://wa.me/573174379260?text=${encodeURIComponent(text)}`;
   window.open(whatsappUrl, '_blank');

@@ -4,30 +4,83 @@ import Footer from "@/components/landing/Footer";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
 import StickyCTA from "@/components/landing/StickyCTA";
 import TrustBadges from "@/components/landing/TrustBadges";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Receipt, ShieldCheck, FileText, Headphones, Check } from "lucide-react";
-import { trackWhatsAppClick, trackScheduleClick, trackCTAClick } from "@/lib/gtm";
+import ServiceHero from "@/components/services/ServiceHero";
+import ServiceFeatures from "@/components/services/ServiceFeatures";
+import ServiceBenefits from "@/components/services/ServiceBenefits";
+import ServiceFAQ from "@/components/services/ServiceFAQ";
+import ServiceCTA from "@/components/services/ServiceCTA";
+import { 
+  Users, Receipt, ShieldCheck, FileText, Headphones, 
+  Calculator, Calendar, Scale, Briefcase, Clock
+} from "lucide-react";
+import { trackWhatsAppClick, trackScheduleClick, trackCTAClick, trackPhoneClick } from "@/lib/gtm";
 
 const Nomina = () => {
   const features = [
-    { icon: Receipt, title: "Nómina Electrónica", description: "Cálculo correcto de salarios, horas extras, deducciones y emisión de nómina electrónica DIAN." },
-    { icon: ShieldCheck, title: "Seguridad Social", description: "Elaboración de planillas, validación de aportes a EPS, ARL, pensión y cajas de compensación." },
-    { icon: FileText, title: "Contratos Laborales", description: "Elaboración, revisión y seguimiento de contratos con apoyo jurídico laboral." },
-    { icon: Headphones, title: "Soporte Mensual", description: "Comprobantes de nómina, incapacidades, licencias y certificados laborales." },
-    { icon: Users, title: "Gestión de Personal", description: "Acompañamiento en contratación, desvinculación y buenas prácticas laborales." },
+    { icon: Receipt, title: "Nómina Electrónica DIAN", description: "Cálculo y emisión de nómina electrónica cumpliendo todos los requisitos de la DIAN." },
+    { icon: ShieldCheck, title: "Seguridad Social", description: "Elaboración de planillas PILA con validación de aportes a EPS, ARL, pensión y cajas." },
+    { icon: FileText, title: "Contratos Laborales", description: "Elaboración, revisión y seguimiento de contratos con apoyo jurídico laboral especializado." },
+    { icon: Calculator, title: "Liquidaciones", description: "Cálculo de liquidaciones, vacaciones, primas y cesantías con total precisión." },
+    { icon: Headphones, title: "Soporte Laboral", description: "Acompañamiento en consultas laborales, incapacidades, licencias y novedades." },
+    { icon: Users, title: "Gestión de Personal", description: "Apoyo en contratación, desvinculación y buenas prácticas de recursos humanos." },
+    { icon: Calendar, title: "Calendario Laboral", description: "Recordatorios de fechas límite y obligaciones laborales para evitar sanciones." },
+    { icon: Scale, title: "Cumplimiento Legal", description: "Garantía de cumplimiento con el código sustantivo del trabajo y normativas vigentes." },
+    { icon: Briefcase, title: "Onboarding Digital", description: "Proceso de incorporación de nuevos empleados 100% digital y automatizado." },
   ];
 
-  const handleCTAClick = (location: string) => {
+  const benefits = [
+    "Cumplimiento total con la normatividad DIAN",
+    "Reducción de riesgos legales y sanciones",
+    "Ahorro de tiempo y recursos administrativos",
+    "Nómina electrónica siempre al día",
+    "Soporte especializado en temas laborales",
+    "Tranquilidad para enfocarte en tu negocio",
+    "Escalabilidad sin complicaciones",
+    "Reducción de errores en liquidaciones",
+  ];
+
+  const faqs = [
+    {
+      question: "¿Cuántos empleados necesito para contratar el servicio?",
+      answer: "Puedes empezar desde 1 empleado. El servicio escala contigo sin límite máximo de empleados.",
+    },
+    {
+      question: "¿Incluye la emisión de nómina electrónica?",
+      answer: "Sí, incluye la emisión de nómina electrónica cumpliendo todos los requisitos de la DIAN, sin costos adicionales.",
+    },
+    {
+      question: "¿Qué pasa si tengo empleados con diferentes tipos de contrato?",
+      answer: "Manejamos todo tipo de contratos: término fijo, indefinido, obra o labor, y prestación de servicios. Cada uno con su tratamiento legal correcto.",
+    },
+    {
+      question: "¿Cómo se manejan las incapacidades y licencias?",
+      answer: "Gestionamos todo el proceso de incapacidades, licencias de maternidad/paternidad y novedades de nómina. Te acompañamos en el recobro ante las EPS.",
+    },
+    {
+      question: "¿Incluye asesoría legal laboral?",
+      answer: "Sí, tienes acceso a consultas laborales con nuestro equipo jurídico especializado en derecho laboral colombiano.",
+    },
+  ];
+
+  const handleScheduleClick = (location: string) => {
     trackScheduleClick(location);
     trackCTAClick("Solicitar información", location);
+    window.location.href = "/#contacto";
   };
 
   const handleWhatsAppClick = () => {
     trackWhatsAppClick("nomina_page", "COR29 People");
     window.open(
-      `https://wa.me/573174379260?text=${encodeURIComponent("Hola, estoy interesado en COR29 People para gestión de nómina")}`,
+      `https://wa.me/573174379260?text=${encodeURIComponent(
+        "Hola, estoy interesado en COR29 People para gestión de nómina y talento humano"
+      )}`,
       "_blank"
     );
+  };
+
+  const handlePhoneClick = () => {
+    trackPhoneClick("nomina_page");
+    window.open("tel:+573174379260", "_self");
   };
 
   return (
@@ -36,6 +89,10 @@ const Nomina = () => {
         <title>Gestión de Nómina y Talento Humano en Colombia | COR29 People</title>
         <meta name="description" content="Servicio integral de nómina electrónica y gestión de talento humano en Colombia. $89.900/mes por empleado. Cumple la normatividad laboral sin preocupaciones." />
         <link rel="canonical" href="https://cor29.com/nomina" />
+        <meta property="og:title" content="Gestión de Nómina y Talento Humano | COR29 People" />
+        <meta property="og:description" content="Nómina electrónica y gestión de talento humano. $89.900/mes por empleado. Todo incluido." />
+        <meta property="og:url" content="https://cor29.com/nomina" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -44,7 +101,12 @@ const Nomina = () => {
             "provider": {
               "@type": "ProfessionalService",
               "name": "COR29",
-              "url": "https://cor29.com"
+              "url": "https://cor29.com",
+              "telephone": "+573174379260",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "CO"
+              }
             },
             "description": "Servicio integral de nómina electrónica y gestión de talento humano en Colombia",
             "areaServed": "Colombia",
@@ -56,168 +118,74 @@ const Nomina = () => {
             }
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cor29.com" },
+              { "@type": "ListItem", "position": 2, "name": "Nómina", "item": "https://cor29.com/nomina" }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
         <Header />
         
         <main>
-          {/* Hero */}
-          <section className="relative pt-28 pb-16 px-4 md:px-8 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-950/50 via-background to-blue-950/30" />
-            <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-            
-            <div className="relative z-10 max-w-7xl mx-auto">
-              <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-6">
-                  <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                  <span className="text-foreground/90 text-sm font-medium">
-                    COR29 People
-                  </span>
-                </div>
-
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-                  Gestión de Nómina y Talento Humano en{" "}
-                  <span className="gradient-text">Colombia</span>
-                </h1>
-
-                <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Delega toda la gestión de nómina y talento humano. Reduce riesgos legales 
-                  y opera con paz, orden y tranquilidad.
-                </p>
-
-                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/30 rounded-2xl p-6 mb-8">
-                  <div className="flex items-baseline gap-2 mb-2">
-                    <span className="text-4xl md:text-5xl font-bold gradient-text">$89.900</span>
-                    <span className="text-muted-foreground">COP/mes por empleado</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Todo incluido. Sin costos ocultos.</p>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="btn-primary-gradient font-bold text-lg px-8 py-6 rounded-xl"
-                    onClick={() => {
-                      handleCTAClick("hero_nomina");
-                      handleWhatsAppClick();
-                    }}
-                  >
-                    Solicitar información
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <a href="/#contacto" onClick={() => handleCTAClick("hero_nomina_form")}>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="border-2 border-border bg-card/50 text-foreground hover:bg-card font-semibold text-lg px-8 py-6 rounded-xl w-full"
-                    >
-                      Agendar asesoría gratuita
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
+          <ServiceHero
+            badge="COR29 People"
+            badgeIcon={Users}
+            title="Gestión de Nómina y Talento Humano en"
+            titleHighlight="Colombia"
+            description="Delega toda la gestión de nómina y talento humano a expertos. Reduce riesgos legales, cumple la normatividad y opera con paz, orden y tranquilidad."
+            priceFrom="$89.900"
+            priceLabel="COP/mes por empleado"
+            primaryCTA="Solicitar información"
+            secondaryCTA="WhatsApp"
+            onPrimaryCTA={() => handleScheduleClick("hero_nomina")}
+            onSecondaryCTA={handleWhatsAppClick}
+            stats={[
+              { value: "100%", label: "cumplimiento DIAN" },
+              { value: "+200", label: "empresas" },
+              { value: "0", label: "sanciones" },
+            ]}
+          />
 
           <TrustBadges />
 
-          {/* Features */}
-          <section className="section-padding section-dark">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  ¿Qué incluye COR29 People?
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Servicio integral para que cumplas correctamente con la normatividad laboral.
-                </p>
-              </div>
+          <ServiceFeatures
+            title="¿Qué incluye COR29 People?"
+            subtitle="Servicio integral para que cumplas correctamente con la normatividad laboral colombiana."
+            features={features}
+          />
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {features.map((feature) => (
-                  <div key={feature.title} className="card-elevated">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4">
-                      <feature.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <ServiceBenefits
+            title="Beneficios de tercerizar tu nómina"
+            benefits={benefits}
+            ctaText="Quiero COR29 People"
+            onCTA={() => {
+              handleScheduleClick("benefits_nomina");
+              handleWhatsAppClick();
+            }}
+          />
 
-          {/* Benefits */}
-          <section className="section-padding section-darker">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Beneficios de tercerizar tu nómina
-                </h2>
-              </div>
+          <ServiceFAQ
+            title="Preguntas frecuentes sobre nómina"
+            faqs={faqs}
+          />
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  "Cumplimiento total con la normatividad DIAN",
-                  "Reducción de riesgos legales y sanciones",
-                  "Ahorro de tiempo y recursos administrativos",
-                  "Soporte especializado en temas laborales",
-                  "Tranquilidad para enfocarte en tu negocio",
-                  "Escalabilidad sin complicaciones",
-                ].map((benefit) => (
-                  <div key={benefit} className="flex items-center gap-3 p-4 bg-card/50 rounded-xl border border-border">
-                    <Check className="h-5 w-5 text-accent flex-shrink-0" />
-                    <span className="text-foreground">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-12 text-center">
-                <Button
-                  size="lg"
-                  className="btn-primary-gradient font-bold text-lg px-10 py-6 rounded-xl"
-                  onClick={() => {
-                    handleCTAClick("benefits_nomina");
-                    handleWhatsAppClick();
-                  }}
-                >
-                  Quiero COR29 People
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQ */}
-          <section className="section-padding section-dark">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-                Preguntas frecuentes sobre nómina
-              </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    q: "¿Cuántos empleados necesito para contratar el servicio?",
-                    a: "Puedes empezar desde 1 empleado. El servicio escala contigo."
-                  },
-                  {
-                    q: "¿Incluye la emisión de nómina electrónica?",
-                    a: "Sí, incluye la emisión de nómina electrónica cumpliendo todos los requisitos de la DIAN."
-                  },
-                  {
-                    q: "¿Qué pasa si tengo empleados con diferentes tipos de contrato?",
-                    a: "Manejamos todo tipo de contratos: término fijo, indefinido, obra o labor, y prestación de servicios."
-                  }
-                ].map((faq, i) => (
-                  <div key={i} className="card-elevated">
-                    <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                    <p className="text-muted-foreground">{faq.a}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <ServiceCTA
+            title="¿Listo para simplificar tu gestión de nómina?"
+            subtitle="Agenda una asesoría gratuita y descubre cómo COR29 People puede ahorrarte tiempo, reducir riesgos y mantener tu nómina siempre al día."
+            primaryCTA="Agendar asesoría gratuita"
+            secondaryCTA="WhatsApp"
+            onPrimaryCTA={() => handleScheduleClick("cta_nomina")}
+            onSecondaryCTA={handleWhatsAppClick}
+            showPhone
+            onPhoneCTA={handlePhoneClick}
+          />
         </main>
 
         <Footer />

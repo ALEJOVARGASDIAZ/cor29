@@ -4,38 +4,138 @@ import Footer from "@/components/landing/Footer";
 import WhatsAppButton from "@/components/landing/WhatsAppButton";
 import StickyCTA from "@/components/landing/StickyCTA";
 import TrustBadges from "@/components/landing/TrustBadges";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, FileText, Calculator, BarChart3, Receipt, Headphones, Monitor } from "lucide-react";
-import { trackWhatsAppClick, trackScheduleClick, trackCTAClick } from "@/lib/gtm";
+import ServiceHero from "@/components/services/ServiceHero";
+import ServiceFeatures from "@/components/services/ServiceFeatures";
+import ServiceBenefits from "@/components/services/ServiceBenefits";
+import ServicePlans from "@/components/services/ServicePlans";
+import ServiceFAQ from "@/components/services/ServiceFAQ";
+import ServiceCTA from "@/components/services/ServiceCTA";
+import { 
+  FileText, Calculator, BarChart3, Receipt, Headphones, 
+  Monitor, PieChart, FileCheck, Clock, Shield 
+} from "lucide-react";
+import { trackWhatsAppClick, trackScheduleClick, trackCTAClick, trackPhoneClick } from "@/lib/gtm";
 
 const Contabilidad = () => {
   const features = [
-    { icon: FileText, text: "Contabilización de facturas de compra" },
-    { icon: Receipt, text: "Emisión de Documento Soporte Electrónico" },
-    { icon: Calculator, text: "Auditoría y pre-contabilización del ciclo contable" },
-    { icon: BarChart3, text: "Estados Financieros completos" },
-    { icon: Headphones, text: "Contador público virtual dedicado" },
-    { icon: Monitor, text: "Software contable con facturación electrónica incluida" },
+    { icon: FileText, title: "Contabilización de Facturas", description: "Registro sistemático de todas tus facturas de compra y venta en el sistema contable." },
+    { icon: Receipt, title: "Facturación Electrónica", description: "Emisión de facturas electrónicas y documento soporte DIAN incluido sin costo adicional." },
+    { icon: Calculator, title: "Declaraciones Tributarias", description: "IVA, Retención, Renta, ICA y todas las declaraciones obligatorias de tu negocio." },
+    { icon: BarChart3, title: "Estados Financieros", description: "Balance General, Estado de Resultados y notas contables mensuales." },
+    { icon: Headphones, title: "Contador Dedicado", description: "Un contador público virtual asignado exclusivamente para atender tus consultas." },
+    { icon: Monitor, title: "Software Contable", description: "Acceso a plataforma de facturación electrónica con capacitación incluida." },
+    { icon: PieChart, title: "Informes de Gestión", description: "Reportes mensuales con indicadores clave para la toma de decisiones." },
+    { icon: FileCheck, title: "Auditoría Contable", description: "Revisión y validación de tu información contable antes de presentar declaraciones." },
+    { icon: Clock, title: "Cumplimiento en Fechas", description: "Garantía de entrega puntual de todas las obligaciones tributarias." },
+  ];
+
+  const benefits = [
+    "Ahorra hasta 80% vs contador tradicional",
+    "Cumplimiento total con la normatividad DIAN",
+    "Acceso 24/7 a tu información contable",
+    "Software de facturación electrónica incluido",
+    "Sin costos ocultos ni sorpresas",
+    "Escalabilidad automática según tu crecimiento",
+    "Soporte prioritario en menos de 3 horas",
+    "Tranquilidad total en temas tributarios",
   ];
 
   const plans = [
-    { name: "Emprendedor", price: "$199.900", limit: "$9.000.000" },
-    { name: "PYME", price: "$352.700", limit: "$19.000.000" },
-    { name: "Pro", price: "$647.900", limit: "$39.000.000" },
-    { name: "Senior", price: "$987.200", limit: "$100.000.000" },
+    { 
+      name: "Emprendedor", 
+      price: "$199.900/mes", 
+      description: "Ventas hasta $9.000.000/mes",
+      features: [
+        "Contabilidad completa",
+        "Facturación electrónica",
+        "1 declaración de IVA",
+        "Estados financieros",
+        "Soporte WhatsApp",
+      ],
+    },
+    { 
+      name: "PYME", 
+      price: "$352.700/mes", 
+      description: "Ventas hasta $19.000.000/mes",
+      features: [
+        "Todo del plan Emprendedor",
+        "Retención en la fuente",
+        "Declaración de renta",
+        "Informes de gestión",
+        "Contador dedicado",
+      ],
+      highlighted: true,
+    },
+    { 
+      name: "Pro", 
+      price: "$647.900/mes", 
+      description: "Ventas hasta $39.000.000/mes",
+      features: [
+        "Todo del plan PYME",
+        "Declaración de ICA",
+        "Auditoría trimestral",
+        "Asesoría tributaria",
+        "Prioridad en soporte",
+      ],
+    },
+    { 
+      name: "Senior", 
+      price: "$987.200/mes", 
+      description: "Ventas hasta $100.000.000/mes",
+      features: [
+        "Todo del plan Pro",
+        "Múltiples sucursales",
+        "Informes ejecutivos",
+        "Reuniones mensuales",
+        "Soporte telefónico",
+      ],
+    },
   ];
 
-  const handleCTAClick = (location: string) => {
+  const faqs = [
+    {
+      question: "¿Qué documentos necesito para empezar?",
+      answer: "Solo necesitas tu RUT, cámara de comercio y acceso a tu facturación actual. Nosotros nos encargamos del resto, incluyendo la migración de tu información contable si vienes de otro contador.",
+    },
+    {
+      question: "¿Cuánto tiempo toma activar el servicio?",
+      answer: "En menos de 48 horas tienes todo listo: software configurado, contador asignado y acceso a tu plataforma. El proceso es 100% digital.",
+    },
+    {
+      question: "¿Puedo cambiar de plan si mi negocio crece?",
+      answer: "Sí, los planes se ajustan automáticamente según tus ventas mensuales. No hay penalidades por cambiar de plan.",
+    },
+    {
+      question: "¿Cómo funciona el soporte?",
+      answer: "Tienes acceso directo a tu contador por WhatsApp con respuesta garantizada en menos de 3 horas en horario laboral. También puedes agendar videollamadas cuando lo necesites.",
+    },
+    {
+      question: "¿Qué pasa si la DIAN me hace un requerimiento?",
+      answer: "Nuestro equipo te acompaña en todo el proceso de respuesta a requerimientos sin costo adicional. Tu tranquilidad está garantizada.",
+    },
+  ];
+
+  const handleScheduleClick = (location: string) => {
     trackScheduleClick(location);
     trackCTAClick("Agenda tu asesoría gratuita", location);
+    window.location.href = "/#contacto";
   };
 
-  const handleWhatsAppPlan = (planName: string) => {
+  const handleWhatsAppClick = (planName?: string) => {
     trackWhatsAppClick("contabilidad_page", planName);
     window.open(
-      `https://wa.me/573174379260?text=${encodeURIComponent(`Hola, estoy interesado en el Plan ${planName} de COR29`)}`,
+      `https://wa.me/573174379260?text=${encodeURIComponent(
+        planName 
+          ? `Hola, estoy interesado en el Plan ${planName} de Contabilidad de COR29`
+          : "Hola, quiero información sobre el servicio de Contabilidad de COR29"
+      )}`,
       "_blank"
     );
+  };
+
+  const handlePhoneClick = () => {
+    trackPhoneClick("contabilidad_page");
+    window.open("tel:+573174379260", "_self");
   };
 
   return (
@@ -44,6 +144,10 @@ const Contabilidad = () => {
         <title>Contabilidad Online para Empresas en Colombia | COR29</title>
         <meta name="description" content="Servicio de contabilidad 100% online para empresas en Colombia. Planes desde $199.900/mes. Facturación electrónica incluida. +500 clientes confían en nosotros." />
         <link rel="canonical" href="https://cor29.com/contabilidad" />
+        <meta property="og:title" content="Contabilidad Online para Empresas en Colombia | COR29" />
+        <meta property="og:description" content="Servicio de contabilidad 100% online. Facturación electrónica incluida. Planes desde $199.900/mes." />
+        <meta property="og:url" content="https://cor29.com/contabilidad" />
+        <meta property="og:type" content="website" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -52,7 +156,12 @@ const Contabilidad = () => {
             "provider": {
               "@type": "ProfessionalService",
               "name": "COR29",
-              "url": "https://cor29.com"
+              "url": "https://cor29.com",
+              "telephone": "+573174379260",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "CO"
+              }
             },
             "description": "Servicio de contabilidad 100% online para empresas en Colombia con facturación electrónica incluida",
             "areaServed": "Colombia",
@@ -64,159 +173,77 @@ const Contabilidad = () => {
             }
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cor29.com" },
+              { "@type": "ListItem", "position": 2, "name": "Contabilidad", "item": "https://cor29.com/contabilidad" }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background">
         <Header />
         
         <main>
-          {/* Hero */}
-          <section className="relative pt-28 pb-16 px-4 md:px-8 overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-950/50 via-background to-blue-950/30" />
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-            
-            <div className="relative z-10 max-w-7xl mx-auto">
-              <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-2 mb-6">
-                  <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                  <span className="text-foreground/90 text-sm font-medium">
-                    +500 empresas en Colombia
-                  </span>
-                </div>
-
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-                  Contabilidad Online para Empresas en{" "}
-                  <span className="gradient-text">Colombia</span>
-                </h1>
-
-                <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-                  Delega tu contabilidad a expertos. Software de facturación electrónica incluido, 
-                  estados financieros mensuales y un contador dedicado para tu negocio.
-                </p>
-
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                  <a href="#contacto" onClick={() => handleCTAClick("hero_contabilidad")}>
-                    <Button size="lg" className="btn-primary-gradient font-bold text-lg px-8 py-6 rounded-xl w-full sm:w-auto">
-                      Agenda tu asesoría gratuita
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </a>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-2 border-border bg-card/50 text-foreground hover:bg-card font-semibold text-lg px-8 py-6 rounded-xl"
-                    onClick={() => handleWhatsAppPlan("Contabilidad")}
-                  >
-                    Escríbenos por WhatsApp
-                  </Button>
-                </div>
-
-                <div className="flex items-center gap-4 text-muted-foreground">
-                  <span className="text-yellow-400">★★★★★</span>
-                  <span className="text-sm">4.9/5 de satisfacción • +500 clientes activos</span>
-                </div>
-              </div>
-            </div>
-          </section>
+          <ServiceHero
+            badge="+500 empresas en Colombia confían en nosotros"
+            title="Contabilidad Online para Empresas en"
+            titleHighlight="Colombia"
+            description="Delega tu contabilidad a expertos certificados. Software de facturación electrónica incluido, estados financieros mensuales y un contador dedicado para tu negocio. Todo 100% online."
+            priceFrom="$199.900/mes"
+            priceLabel="Todo incluido"
+            primaryCTA="Agenda tu asesoría gratuita"
+            secondaryCTA="Escríbenos por WhatsApp"
+            onPrimaryCTA={() => handleScheduleClick("hero_contabilidad")}
+            onSecondaryCTA={() => handleWhatsAppClick()}
+            stats={[
+              { value: "4.9/5", label: "satisfacción" },
+              { value: "+500", label: "clientes activos" },
+              { value: "<3h", label: "tiempo de respuesta" },
+            ]}
+          />
 
           <TrustBadges />
 
-          {/* Features */}
-          <section className="section-padding section-dark">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  ¿Qué incluye nuestro servicio de contabilidad?
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Todo lo que necesitas para mantener tu contabilidad al día y cumplir con tus obligaciones fiscales.
-                </p>
-              </div>
+          <ServiceFeatures
+            title="¿Qué incluye nuestro servicio de contabilidad?"
+            subtitle="Todo lo que necesitas para mantener tu contabilidad al día y cumplir con tus obligaciones fiscales sin preocupaciones."
+            features={features}
+          />
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {features.map((feature) => (
-                  <div key={feature.text} className="card-elevated flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <p className="text-foreground font-medium">{feature.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <ServicePlans
+            title="Planes adaptados a tu negocio"
+            subtitle="Elige el plan que mejor se adapte a tus ventas mensuales"
+            plans={plans}
+            onSelectPlan={(planName) => handleWhatsAppClick(planName)}
+          />
 
-          {/* Plans */}
-          <section className="section-padding section-darker">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Planes adaptados a tu negocio
-                </h2>
-                <p className="text-xl text-muted-foreground">
-                  Desde <span className="gradient-text font-bold">$199.900/mes</span> con todo incluido
-                </p>
-              </div>
+          <ServiceBenefits
+            title="Beneficios de elegir COR29"
+            benefits={benefits}
+            ctaText="Solicitar diagnóstico gratuito"
+            onCTA={() => handleScheduleClick("benefits_contabilidad")}
+          />
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {plans.map((plan) => (
-                  <div key={plan.name} className="card-pricing text-center">
-                    <h3 className="text-lg font-bold text-foreground mb-2">Plan {plan.name}</h3>
-                    <div className="text-3xl font-bold gradient-text mb-2">{plan.price}</div>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Ventas hasta {plan.limit}/mes
-                    </p>
-                    <Button
-                      variant="outline"
-                      className="w-full"
-                      onClick={() => handleWhatsAppPlan(plan.name)}
-                    >
-                      Comenzar
-                    </Button>
-                  </div>
-                ))}
-              </div>
+          <ServiceFAQ
+            title="Preguntas frecuentes sobre contabilidad"
+            faqs={faqs}
+          />
 
-              <div className="mt-12 text-center">
-                <a href="/#contacto" onClick={() => handleCTAClick("plans_contabilidad")}>
-                  <Button size="lg" className="btn-primary-gradient font-bold text-lg px-10 py-6 rounded-xl">
-                    Solicita tu diagnóstico gratuito
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </a>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQ */}
-          <section className="section-padding section-dark">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-                Preguntas frecuentes sobre contabilidad
-              </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    q: "¿Qué documentos necesito para empezar?",
-                    a: "Solo necesitas tu RUT, cámara de comercio y acceso a tu facturación. Nosotros nos encargamos del resto."
-                  },
-                  {
-                    q: "¿Cuánto tiempo toma activar el servicio?",
-                    a: "En menos de 48 horas tienes todo listo: software configurado, contador asignado y listo para empezar."
-                  },
-                  {
-                    q: "¿Puedo cambiar de plan si mi negocio crece?",
-                    a: "Sí, los planes se ajustan automáticamente según tus ventas mensuales."
-                  }
-                ].map((faq, i) => (
-                  <div key={i} className="card-elevated">
-                    <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                    <p className="text-muted-foreground">{faq.a}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <ServiceCTA
+            title="¿Listo para simplificar tu contabilidad?"
+            subtitle="Agenda una asesoría gratuita y descubre cómo podemos ayudarte a cumplir con tus obligaciones tributarias sin complicaciones."
+            primaryCTA="Agendar asesoría gratuita"
+            secondaryCTA="WhatsApp"
+            onPrimaryCTA={() => handleScheduleClick("cta_contabilidad")}
+            onSecondaryCTA={() => handleWhatsAppClick()}
+            showPhone
+            onPhoneCTA={handlePhoneClick}
+          />
         </main>
 
         <Footer />

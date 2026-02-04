@@ -1,29 +1,77 @@
+import { Link } from "react-router-dom";
 import corLogo from "@/assets/cor-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const services = [
+    { label: "Contabilidad", href: "/contabilidad" },
+    { label: "Nómina y Talento Humano", href: "/nomina" },
+    { label: "SG-SST", href: "/sgsst" },
+  ];
+
+  const quickLinks = [
+    { label: "Inicio", href: "/" },
+    { label: "Beneficios", href: "/#beneficios" },
+    { label: "Testimonios", href: "/#testimonios" },
+    { label: "Contacto", href: "/#contacto" },
+  ];
 
   return (
     <footer className="bg-card border-t border-border py-12 px-4 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo & description */}
-          <div className="md:col-span-2">
-            <img src={corLogo} alt="COR29" className="h-14 w-auto mb-4" />
-            <p className="text-muted-foreground max-w-md leading-relaxed">
+          <div className="md:col-span-1">
+            <Link to="/">
+              <img src={corLogo} alt="COR29" className="h-14 w-auto mb-4" />
+            </Link>
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Contabilidad y gestión empresarial 100% online. Simplificamos la 
               gestión de tu negocio con soluciones modernas, cercanas y confiables.
             </p>
           </div>
 
-          {/* Links */}
+          {/* Services */}
           <div>
             <h4 className="font-semibold text-foreground mb-4">Servicios</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#planes" className="hover:text-primary transition-colors">Planes Contables</a></li>
-              <li><a href="#nomina" className="hover:text-primary transition-colors">Gestión de Nómina</a></li>
-              <li><a href="#planes" className="hover:text-primary transition-colors">Asesoría Legal</a></li>
-              <li><a href="#planes" className="hover:text-primary transition-colors">Seguridad y Salud</a></li>
+              {services.map((service) => (
+                <li key={service.href}>
+                  <Link 
+                    to={service.href} 
+                    className="hover:text-primary transition-colors"
+                  >
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Enlaces</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  {link.href.startsWith("/") && !link.href.includes("#") ? (
+                    <Link 
+                      to={link.href} 
+                      className="hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={link.href} 
+                      className="hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -49,7 +97,7 @@ const Footer = () => {
                   hola@cor29.com
                 </a>
               </li>
-              <li>100% Online - Colombia</li>
+              <li className="text-sm">100% Online - Colombia</li>
             </ul>
           </div>
         </div>
@@ -60,9 +108,12 @@ const Footer = () => {
             <p className="text-muted-foreground text-sm">
               © {currentYear} COR29. Todos los derechos reservados.
             </p>
-            <a href="/admin/login" className="text-primary hover:text-primary/80 transition-colors font-medium text-sm">
-              🔐 Admin
-            </a>
+            <Link 
+              to="/admin/login" 
+              className="text-muted-foreground hover:text-primary transition-colors text-sm"
+            >
+              Admin
+            </Link>
           </div>
           <div className="flex flex-wrap gap-4 md:gap-6 text-muted-foreground text-sm">
             <a href="#" className="hover:text-primary transition-colors">
